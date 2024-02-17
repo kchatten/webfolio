@@ -47,6 +47,10 @@ app.get("/user", async (req,res) =>{
     }
 })
 
+app.get("/auth/register", (req, res) =>{
+    app.render("index.ejs");
+})
+
 
 // DEFINE PORT
 
