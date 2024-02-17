@@ -28,8 +28,10 @@ router.post('/register', async (req, res) => {
         conn.release();
 
         if (existingUser.length > 0) {
+            res.redirect('/');
             // If the email address is already registered, return an error
             return res.status(400).json({ error: 'Email address already registered' });
+           
         }
 
         // Insert user data into the database
@@ -37,7 +39,7 @@ router.post('/register', async (req, res) => {
 
         // Redirect user back to the homepage
         res.redirect('/');
-        
+
     } catch (error) {
         console.error('Error registering user:', error);
         res.status(500).json({ error: 'Internal Server Error' });
