@@ -22,13 +22,22 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
-        // Insert user data into the database
+        // Check if the email address is already registered
         const conn = await pool.getConnection();
-        const result = await conn.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, password]);
+        const existingUser = await conn.query('SELECT * FROM users WHERE email = ?', [email]);
         conn.release();
 
-        // Respond with success message
-        res.status(200).json({ message: 'User registered successfully' });
+        if (existingUser.length > 0) {
+            // If the email address is already registered, return an error
+            return res.status(400).json({ error: 'Email address already registered' });
+        }
+
+        // Insert user data into the database
+        const insertUser = await pool.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, password]);
+
+        // Redirect user back to the homepage
+        res.redirect('/');
+        
     } catch (error) {
         console.error('Error registering user:', error);
         res.status(500).json({ error: 'Internal Server Error' });
