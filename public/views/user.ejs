@@ -7,10 +7,16 @@
 </head>
 <body>
     <form action="/auth/register" method="POST">
-    <input name="username" type="text" placeholder="Enter Username"/>
-    <input name="email" type="email" placeholder="Enter Email"/>
-    <input name="password" type="password" placeholder="Enter Password"/>
-    <button type="submit">Register</button>
+        <input name="username" type="text" placeholder="Enter Username"/>
+        <input name="email" type="email" placeholder="Enter Email"/>
+        <input name="password" type="password" placeholder="Enter Password"/>
+        <button type="submit">Register</button>
+    </form>
+
+    <form action="/auth/login" method="POST">
+        <input name="email" type="email" placeholder="Enter Email"/>
+        <input name="password" type="password" placeholder="Enter Password"/>
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>

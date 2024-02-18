@@ -46,4 +46,34 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.post('/login', async (req, res) => {
+    try {
+        // Extract login credentials from request body
+        const { email, password } = req.body;
+
+        // Validate login credentials
+        if (!email || !password) {
+            return res.status(400).json({ error: 'Missing email or password' });
+        }
+
+        // Check if the user exists in the database
+        const conn = await pool.getConnection();
+        const user = await conn.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password]);
+        conn.release();
+
+        if (user.length === 0) {
+            // If no user found, return authentication error
+            return res.status(401).json({ error: 'Invalid email or password' });
+        }
+
+        // User authenticated successfully, redirect to the homepage or any other page
+        res.redirect('/');
+
+    } catch (error) {
+        console.error('Error logging in:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 module.exports = router;
