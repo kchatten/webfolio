@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+</head>
+<body>
+    <style>
+        body{
+            background-image: url(https://www.freevector.com/uploads/vector/preview/4951/FreeVector-Under-Construction-Graphics.jpg);
+            background-size:cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+<footer id="footer">
+    
+</footer>
+<script>
+	document.addEventListener("DOMContentLoaded", function(){
+        // Fetch and include the footer content using JavaScript
+        fetch('views/footer.ejs')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch footer: ' + response.status);
+                }
+                return response.text();
+            })
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching footer:', error);
+            });
+	});
+</script>
+</body>
+</html>

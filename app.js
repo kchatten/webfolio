@@ -14,15 +14,10 @@ app.use(express.json());
 // APP SETS
 app.set("view engine", "ejs")
 
-app.set(`views`, `public`)
 
 // APP GETS
 app.get("/", (req, res) => {
     res.render(`index.ejs`); 
-})
-
-app.get("page2", (req, res) => {
-    res.render(`.ejs`); 
 })
 
 
@@ -30,4 +25,3 @@ app.get("page2", (req, res) => {
 app.listen(port, () => {
         console.log(`Server is running on ${port}`);
 })
-
