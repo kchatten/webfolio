@@ -70,6 +70,7 @@ router.post('/login', async (req, res) => {
         res.redirect('/');
 
     } catch (error) {
+        res.redirect('/');
         console.error('Error logging in:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
