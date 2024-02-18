@@ -53,6 +53,7 @@ router.post('/login', async (req, res) => {
 
         // Validate login credentials
         if (!email || !password) {
+            res.redirect('/');
             return res.status(400).json({ error: 'Missing email or password' });
         }
 
