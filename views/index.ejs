@@ -14,28 +14,52 @@
             height: 100%;
             margin: 0 !important;
         }
-    </style>
+        /* Styling for the overlay */
+        #overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+          z-index: 9999; /* Ensure it's on top of other elements */
+          display: none; /* Initially hidden */
+        }
+      
+        /* Styling for the content in the overlay */
+        #overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: white; /* White background */
+        padding: 20px;
+        border-radius: 10px; /* Rounded corners */
+        max-width: 300px;
+        } 
 
-<footer id="footer">
-    
-</footer>
-<script>
-	document.addEventListener("DOMContentLoaded", function(){
-        // Fetch and include the footer content using JavaScript
-        fetch('views/footer.ejs')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch footer: ' + response.status);
-                }
-                return response.text();
-            })
-            .then(html => {
-                document.getElementById('footer').innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Error fetching footer:', error);
-            });
-	});
-</script>
+      </style>    
+</head>
+      
+    <div id="overlay">
+        <div id="overlay-content">
+            <p>Hello! Thank you for your interest in my webfolio. I am currently quite busy with my studies but I am hard at work trying to update this as soon as possible.</p>
+        </div>
+    </div>
+      
+    <script>
+        function showOverlay() {
+          document.getElementById("overlay").style.display = "block";
+        }
+      
+        // Commented out for later use.
+        // function closeOverlay() {
+        //   document.getElementById("overlay").style.display = "none";
+        // }
+      
+        showOverlay();
+
+    </script>
 </body>
 </html>
