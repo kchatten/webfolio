@@ -1,6 +1,5 @@
 // IMPORT MODULES / MIDDLEWARE
 const express = require(`express`);
-const authRouter = require('./routes/authRouter');
 const hhRouter = require('./routes/hhRouter')
 
 // CREATE EXPRESS APPLICATION
@@ -15,7 +14,6 @@ const port = 3000;
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
 
-app.use('/auth', authRouter);
 app.use('/habitheroes', hhRouter);
 
 // APP GETS

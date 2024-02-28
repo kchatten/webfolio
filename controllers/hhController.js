@@ -1,5 +1,7 @@
-let filePath = `views/habitheroes`
-
 exports.homepage = (req, res) => {
-    res.render(filePath + `/index.ejs`);
+    res.render(`habitheroes/index.ejs`);
+}
+
+exports.register = (req, res) => {
+    res.send("TODO: Registration")
 }
