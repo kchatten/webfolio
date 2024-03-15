@@ -1,15 +1,17 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const port = 3000;
 
-app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'build')));
 
-app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.render('index')
+
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-});
+
+var port = 3000
+app.listen(port);
+console.log(`Listening on port ${port}`);
