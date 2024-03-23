@@ -22,6 +22,5 @@ $(document).ready(function () {
         $("#banner-text").text(result);
     }
 
-    setInterval(function() {ConstructStringFromVariations(kVariations, cVariations, hVariations, aVariations, tVariations, ".", dVariations, eVariations, vVariations)}, 150);
-    
+    setInterval(function() {ConstructStringFromVariations(kVariations, cVariations, hVariations, aVariations, tVariations, ".", dVariations, eVariations, vVariations)}, 150);  
 });
