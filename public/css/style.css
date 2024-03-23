@@ -1,0 +1,58 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#root{
+    padding: 0;
+    margin: 0;
+
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+/*#region [Header Button Styling] */
+#header-container-main button{
+    margin: 10px;
+
+    height: 30%;
+    width: 100px;
+    border: 2px solid lime;
+
+    background-color: transparent;
+    color: lime;
+}
+
+#header-container-main .--active{
+    background-color: green !important;
+    color: lime !important;
+}
+/*#endregion*/
+
+/*#region [Header Banner Text Styling */
+#banner-text{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    color: lime;
+
+    font-size: larger;
+}
+
+/*#region [Footer License Styling]*/ 
+#footer-container-main a{
+    color: lime;
+}
+
+#footer-container-main a:visited{
+    color: green;
+}
+
+#footer-container-main a:hover{
+    color: green;
+}
+/*#endregion*/
