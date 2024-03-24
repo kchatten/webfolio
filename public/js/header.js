@@ -19,26 +19,53 @@ header.css({
 $("#root").append(header);
 // #endregion 
 
+
+var queryParams = new URLSearchParams(window.location.search);
+var currentPage = queryParams.get("page");
+
 // #region [Header Buttons]
 const buttons = [
-    { id: "btn-home", text: "Home", path: "/", clickHandler: function(){
-        ResetActiveButtons();
-        window.location.href = "/";
-    }},
-    { id: "btn-aboutme", text: "About Me", path: "/aboutme", clickHandler: function(){
-        ResetActiveButtons();
-        window.location.href = "/aboutme"; 
-    }},
-    { id: "btn-projects", text: "Projects", path: "/projects", clickHandler: function(){
-        ResetActiveButtons();
-        window.location.href = "/projects"
-    }},
-    { id: "btn-contact", text: "Contact", path: "/contact", clickHandler: function(){
-        ResetActiveButtons();
-        window.location.href = "/contact"; 
-    }},
+    { 
+        id: "btn-home", 
+        text: "Home", 
+        queryParam: "/", 
+        clickHandler(queryParam) {
+            ResetActiveButtons();
+            window.history.pushState({}, "", "/?page=" + queryParam);
+            console.log(window.location.search); // Debugging
+        }
+    },
+    { 
+        id: "btn-aboutme", 
+        text: "About Me", 
+        queryParam: "aboutme", 
+        clickHandler(queryParam) {
+            ResetActiveButtons();
+            window.history.pushState({}, "", "/?page=" + queryParam);
+            console.log(window.location.search); // Debugging
+        }
+    },
+    { 
+        id: "btn-projects", 
+        text: "Projects", 
+        queryParam: "projects", 
+        clickHandler(queryParam) {
+            ResetActiveButtons();
+            window.history.pushState({}, "", "/?page=" + queryParam);
+            console.log(window.location.search); // Debugging
+        }
+    },
+    { 
+        id: "btn-contact", 
+        text: "Contact", 
+        queryParam: "contact", 
+        clickHandler(queryParam) {
+            ResetActiveButtons();
+            window.history.pushState({}, "", "/?page=" + queryParam);
+            console.log(window.location.search); // Debugging
+        }
+    },
 ];
-// #endregion
 
 function ResetActiveButtons(){
     $(".--active").removeClass("--active");
@@ -51,7 +78,9 @@ $(document).ready(function() {
         var button = $("<button></button>");
         button.attr("id", buttonProps.id);
         button.text(buttonProps.text);
-        button.click(buttonProps.clickHandler);
+        button.click(function() {
+            buttonProps.clickHandler(buttonProps.queryParam);
+        });
         button.hover(
             function() { 
                 $(this).css({
@@ -59,7 +88,7 @@ $(document).ready(function() {
                     "color": "lime"
                 });
             },
-            function() { // 
+            function() { 
                 $(this).css({
                     "background-color": "black",
                     "color": "lime"
@@ -67,14 +96,5 @@ $(document).ready(function() {
             }
         );
         buttonContainer.append(button);
-    });
-
-    var path = window.location.pathname;
-
-    buttons.forEach(function(buttonProps) {
-        if (buttonProps.path === path) {
-            $("#" + buttonProps.id).addClass("--active");
-            return;
-        }
     });
 });
