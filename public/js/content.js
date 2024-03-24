@@ -27,7 +27,7 @@ UpdateContent();
 function UpdateContent() {
     const page = new URLSearchParams(window.location.search).get('page');
     contentContainer.empty();
-    if (page === "/") {
+    if (page === "/" || page === undefined) {
         const newText = $("<p>Chromatic Ivory</p>");
         contentContainer.append(newText);
     } else if (page === "aboutme") {
