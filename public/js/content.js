@@ -22,7 +22,7 @@ $("#root").append(contentContainer);
 
 //#region [Content]
 
-
+UpdateContent();
 
 function UpdateContent() {
     const page = new URLSearchParams(window.location.search).get('page');
