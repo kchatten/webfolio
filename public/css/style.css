@@ -5,8 +5,17 @@ body{
     width: 100vw;
 }
 
+img{ /* TODO: Remove this, set the dimensions where appropriate, currently controls the Chromatic Abberation Elephant*/
+  width: 400px;
+  height: 1000px;
+}
+
 #root{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     padding: 0;
+
     margin: 0;
 
     height: 100%;
@@ -15,7 +24,7 @@ body{
 }
 
 /*#region [Header Button Styling] */
-#header-container-main button{
+#header-container button{
     margin: 10px;
 
     height: 30%;
@@ -26,7 +35,7 @@ body{
     color: lime;
 }
 
-#header-container-main .--active{
+#header-container .--active{
     background-color: green !important;
     color: lime !important;
 }
@@ -42,17 +51,35 @@ body{
 
     font-size: larger;
 }
+/*#endregion*/
+
+/*#region [Contact Button Styling] */
+
+#contact-container-main button:hover{
+    background-color: green;
+}
+
+.--contact-button{
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+    color: lime;
+    background-color: black;
+    border: 2px solid lime;
+}
+
+/*#endregion*/
 
 /*#region [Footer License Styling]*/ 
-#footer-container-main a{
+#footer-container a{
     color: lime;
 }
 
-#footer-container-main a:visited{
+#footer-container a:visited{
     color: green;
 }
 
-#footer-container-main a:hover{
+#footer-container a:hover{
     color: green;
 }
 /*#endregion*/

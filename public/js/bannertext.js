@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     // Construct the string "dev" from arrays with variations
     let websiteName = "kchat.dev";
-    $("#header-container-main").append($(`<div id="banner-text">${websiteName}</div>`));
+    $("#header-container").append($(`<div id="banner-text">${websiteName}</div>`));
 
     // Function to randomly select a character from each array and construct a string
     function ConstructStringFromVariations(...variationArrays) {

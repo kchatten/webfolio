@@ -1,21 +1,21 @@
 // #region [Header Container]
-const header = $("<div></div>");
-header.attr({
-    "id": "header-container-main",
-})
+const header = $("<div id='header-container'></div>");
 header.css({
     "margin": "0",
     "padding": "0",
 
     "display": "flex",
+    "z-index": "1",
+
     "justify-content": "flex-end",
     "align-items": "flex-end",
 
-    "height": "150px",
+    "min-height": "150px",
     "width": "100%",
     "border-bottom": "2px solid lime", 
-})
 
+    "background-color": "#000",
+})
 $("#root").append(header);
 // #endregion 
 
@@ -45,7 +45,7 @@ function ResetActiveButtons(){
 }
 
 $(document).ready(function() {
-    var buttonContainer = $("#header-container-main");
+    var buttonContainer = $("#header-container");
     
     buttons.forEach(function(buttonProps) {
         var button = $("<button></button>");
@@ -74,7 +74,7 @@ $(document).ready(function() {
     buttons.forEach(function(buttonProps) {
         if (buttonProps.path === path) {
             $("#" + buttonProps.id).addClass("--active");
-            return false; 
+            return;
         }
     });
 });
