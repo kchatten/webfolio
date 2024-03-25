@@ -80,6 +80,7 @@ $(document).ready(function() {
         button.text(buttonProps.text);
         button.click(function() {
             buttonProps.clickHandler(buttonProps.queryParam);
+            $(this).addClass("--active");
         });
         button.hover(
             function() { 
