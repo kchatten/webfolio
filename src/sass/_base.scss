@@ -4,56 +4,67 @@ $primary : lime;
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 a:visited,
 a{color:$primary}
 
-#root {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+hr{
+    border: none;
+    min-height: 1rem;
 }
 
 body {
+
+    height: 100dvh;
+    width: 100dvw;
     background-color: black;
     color: $primary;
 }
 
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+
+
 #header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 
-  
-
-    min-height: 11vh;
+    justify-content: center;
 
     border-bottom: 2px dashed $primary;
 
     #site-title {
         display: none;
         
-        width: 30%;
+        width: 20%;
 
         align-content   : center;
     
+        text-wrap: nowrap;
         text-align: center;
-        font-size: xx-large;
+        font-size: x-large;
     }
 
     #button-container {
         display: inherit;
         flex-direction: inherit;
-        flex:1;
-        min-width: 50%;
-
-        justify-content: space-evenly;
+      
+        button:last-of-type {
+            margin: 0;
+        }
 
         button {
+            margin-right: 1rem;
+            padding: .25rem;
             display: flex;
-            flex: 1;
             place-content: center;
             place-items: center;
         
@@ -82,11 +93,11 @@ body {
 }
 
 #index-container{
+    padding: .5rem;
     display: flex;
     flex-direction: column;
     
-    place-content: center;
-    place-items: center;
+    justify-content: space-evenly;
 
     height: 100%;
     width: 100%;
@@ -95,8 +106,8 @@ body {
 }
 
 #contact-container {
-    display: flex;
-    flex-direction: row;
+
+    display: grid;
 
     place-content: center;
     place-items: center;
@@ -109,14 +120,12 @@ body {
         margin: 1rem;
         padding: 1rem;
 
+        width: 80%;
+        border: 2px dashed $primary;
 
         place-content: center;
+        place-items: center ;
 
-        min-width: 10%;
-        max-width: 12rem;
-        min-height: 10%;
-
-        border: 2px dashed $primary;
 
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
@@ -137,9 +146,27 @@ body {
 @media screen and (min-width: 600px) {
 
     #header {
+
+        justify-content: space-between;
+
         #site-title {
             display: block;
         }
 
+        #button-container{
+
+            button:last-of-type{
+                margin-right: 1rem;
+            }
+        }
+
+    }
+
+    #contact-container{
+        display: flex;
+
+        .contact-button{
+            height: 30%;
+        }
     }
 }

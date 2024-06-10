@@ -35,9 +35,9 @@ const router = createBrowserRouter(
       <Route path="/" element={
       <div id="index-container">
         <p>Hello there, my name is Kyal Chatten and this is my personal website.</p>
-        <br/>
+        <hr/>
         <p>I'm a junior Web Developer based out of Ontario, Canada.</p>
-        <br/>
+        <hr/>
         <p>I've got an informal background in IT and have been upskilling with self-directed learning, certification programs and workshops.</p>
       </div>
       } />
