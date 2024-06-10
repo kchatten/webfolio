@@ -91,6 +91,7 @@ body {
 #contact-container .contact-button {
   margin: 1rem;
   padding: 1rem;
+  overflow: scroll;
   width: 80%;
   border: 2px dashed lime;
   place-content: center;
