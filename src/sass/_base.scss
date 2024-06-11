@@ -46,10 +46,10 @@ body {
         
         width: 20%;
 
-        align-content   : center;
+        align-content: center;
     
         text-wrap: nowrap;
-        text-align: center;
+
         font-size: x-large;
     }
 
@@ -120,8 +120,6 @@ body {
         margin: 1rem;
         padding: 1rem;
 
-        overflow: scroll;
-
         width: 80%;
         border: 2px dashed $primary;
 
@@ -145,7 +143,7 @@ body {
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600px) { // Intermediary media query for small to medium devices in landscape
 
     #header {
 
@@ -168,7 +166,32 @@ body {
         display: flex;
 
         .contact-button{
+            height: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) { // Intermediary media query for medium to large devices in landscape
+
+
+    #contact-container{
+        .contact-button{
             height: 30%;
         }
     }
+}
+
+@media screen and (min-width: 800px) and (min-height: 600px) { // Media query for large devices like monitors or tablets
+
+    hr{
+        border: none;
+        min-height: 0;
+    }
+
+    #contact-container{
+        .contact-button{
+            font-size: xx-large;
+        }
+    }
+    
 }

@@ -33,16 +33,20 @@ const router = createBrowserRouter(
       errorElement={<ErrorBoundary />}
     >
       <Route path="/" element={
-      <div id="index-container">
-        <p>Hello there, my name is Kyal Chatten and this is my personal website.</p>
-        <hr/>
-        <p>I'm a junior Web Developer based out of Ontario, Canada.</p>
-        <hr/>
-        <p>I've got an informal background in IT and have been upskilling with self-directed learning, certification programs and workshops.</p>
-      </div>
+        <div id="index-container">
+          <p>Hello there, my name is Kyal Chatten and this is my personal website. It's pretty plain because I'm focused on my personal and professional development.</p>
+          <hr/>
+          <p>I'm a junior Web Developer based out of Ontario, Canada.</p>
+          <hr/>
+          <p>I have fond memories of the video games that used to come in cereal boxes, and I'd like to work in educational entertainment (edutainment).</p>
+          <hr/>
+          <p>I'm passionate about creating memorable experiences through interactive media.</p>
+          <hr/>
+          <p>I've got an informal background in IT and have been upskilling with self-directed learning, certification programs and workshops.</p>
+        </div>
       } />
-      <Route path="/projects" element={<ProjectsPage/>} />
-      <Route path="/contact" element={<ContactPage/>} />
+      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/contact" element={<ContactPage />} />
     </Route>
   )
 )

@@ -39,7 +39,6 @@ body {
   width: 20%;
   align-content: center;
   text-wrap: nowrap;
-  text-align: center;
   font-size: x-large;
 }
 #header #button-container {
@@ -91,7 +90,6 @@ body {
 #contact-container .contact-button {
   margin: 1rem;
   padding: 1rem;
-  overflow: scroll;
   width: 80%;
   border: 2px dashed lime;
   place-content: center;
@@ -123,7 +121,21 @@ body {
     display: flex;
   }
   #contact-container .contact-button {
+    height: 50%;
+  }
+}
+@media screen and (min-width: 800px) {
+  #contact-container .contact-button {
     height: 30%;
+  }
+}
+@media screen and (min-width: 800px) and (min-height: 600px) {
+  hr {
+    border: none;
+    min-height: 0;
+  }
+  #contact-container .contact-button {
+    font-size: xx-large;
   }
 }
 
