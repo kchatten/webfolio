@@ -29,13 +29,13 @@ const ContactPage = () => {
     const buildContactButtons = () => {
 
         return contacts.map(element => (
-            <div
+            <button
                 key={element.title}
                 className="contact-button"
                 onClick={() => { handleClick(element.href) }}
             >
                 <p>{element.title}</p>
-            </div>
+            </button>
         ));
 
     };

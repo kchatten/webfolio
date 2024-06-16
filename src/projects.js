@@ -31,13 +31,13 @@ const ProjectsPage = () => {
     const buildProjectButtons = () => {
 
         return projects.map(element => (
-            <div
+            <button
                 key={element.title}
                 className="contact-button"
                 onClick={() => { handleClick(element.href) }}
             >
-                <p>{element.title}</p>
-            </div>
+                {element.title}
+            </button>
         ));
 
     };

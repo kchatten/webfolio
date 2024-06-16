@@ -94,7 +94,7 @@ const Header = () => {
 
     return ( // Return for the Header function. It returns header element that contains a rotating site title and is populated with buttons via the renderHeaderButtons function.
         <header id="header">
-            <p ref={bannerTextRef} id="site-title"></p>
+            <p ref={bannerTextRef} id="site-title" aria-label="kchat.dev"></p>
             <div id="button-container">
                 {renderHeaderButtons()}
             </div>
