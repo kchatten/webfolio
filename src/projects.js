@@ -4,10 +4,6 @@ const ProjectsPage = () => {
 
     const projects = [
         {
-            title: "Astro Blog",
-            href: "https://kchatblog.netlify.app"
-        },
-        {
             title: "Type 1 Diabetes Awareness & Educational Resource",
             href: "https://www.thedword.ca"
         },
